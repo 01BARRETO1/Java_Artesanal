@@ -7,7 +7,7 @@ public class TestAtributos {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		Maquina rubia = new Maquina("Pilsener", "Cerveza rubia", 0.02, 10000);
+		Maquina rubia = new Maquina("Pilsener", "Cerveza rubia", 0.02, 10000, "Artesanal_Pilsener");
 		
 		rubia.imprimir();
 		

@@ -25,7 +25,7 @@ public class TestServirCervezaAI {
      */
     @Test
     public void servirExactamenteCantidadDisponible() {
-        Maquina m = new Maquina("Lager", "Cerveza clara", 0.01, 2000.0);
+        Maquina m = new Maquina("Lager", "Cerveza clara", 0.01, 2000.0, "Artesanal_Larger");
         // recargar 500 ml (dentro del límite)
         boolean recargoOk = m.recargarCerveza(500.0);
         assertTrue(recargoOk);
@@ -47,7 +47,7 @@ public class TestServirCervezaAI {
      */
     @Test
     public void servirMenosQueDisponibleReduceCantidadActual() {
-        Maquina m = new Maquina("IPA", "Cerveza amarga", 0.02);
+        Maquina m = new Maquina("IPA", "Cerveza amarga", 0.02, "Artesanal_Ipa");
         // recargar 2000 ml
         boolean recargoOk = m.recargarCerveza(2000.0);
         assertTrue(recargoOk);
@@ -68,7 +68,7 @@ public class TestServirCervezaAI {
      */
     @Test
     public void noServirSiNoHaySuficienteCerveza() {
-        Maquina m = new Maquina("Stout", "Cerveza oscura", 0.05, 1000.0);
+        Maquina m = new Maquina("Stout", "Cerveza oscura", 0.05, 1000.0, "Aretesanal_Stout");
         // recargar 300 ml
         boolean recargoOk = m.recargarCerveza(300.0);
         assertTrue(recargoOk);
@@ -91,7 +91,7 @@ public class TestServirCervezaAI {
      */
     @Test
     public void servirDespuesDeLlenarMaquina() {
-        Maquina m = new Maquina("Pilsner", "Cerveza ligera", 0.015, 5000.0);
+        Maquina m = new Maquina("CeroAlcohol", "Cerveza ligera", 0.015, 5000.0, "Artesanal_CeroAlcohol");
         // llenarMaquina deja cantidadActual = capacidadMaxima - 100 = 4900
         m.llenarMaquina();
         double antes = m.getCantidadActual();
@@ -111,7 +111,7 @@ public class TestServirCervezaAI {
      */
     @Test
     public void servirCeroNoModificaCantidadYRetornaCero() {
-        Maquina m = new Maquina("Amber", "Cerveza ámbar", 0.03);
+        Maquina m = new Maquina("Amber", "Cerveza ámbar", 0.03, "Artesanal_Amber");
         // recargar 1000 ml
         boolean recargoOk = m.recargarCerveza(1000.0);
         assertTrue(recargoOk);

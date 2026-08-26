@@ -5,7 +5,7 @@ import com.krakedev.artesanal.Maquina;
 public class TestServir {
 
 	public static void main(String[] args) {
-		Maquina rubia=new Maquina("Club","Más fina", 0.02, 8000);
+		Maquina rubia=new Maquina("Club","Más fina", 0.02, 8000, "Aretesanal_Club");
 		System.out.println("================---------\n estado Incial");
 		rubia.imprimir();
 		System.out.println("================---------\n Llenando maquina...");

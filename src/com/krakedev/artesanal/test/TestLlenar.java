@@ -6,12 +6,12 @@ public class TestLlenar {
 
 	public static void main(String[] args) {
 		
-		Maquina rubia=new Maquina("Club","Más fina", 0.02, 8000);
+		Maquina rubia=new Maquina("Club","Más fina", 0.02, 8000, "Artesanal_Club");
 		rubia.imprimir();
 		rubia.llenarMaquina();
 		rubia.imprimir();
 		
-		Maquina negra=new Maquina("Pilsener", "Cerveza más barata y buena", 0.02);
+		Maquina negra=new Maquina("Pilsener", "Cerveza más barata y buena", 0.02,"Artesanal_Pilsener");
 		negra.imprimir();
 		negra.llenarMaquina();
 		negra.imprimir();

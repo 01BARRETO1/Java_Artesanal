@@ -6,9 +6,11 @@ public class Maquina {
 	private double precioPorMl;
 	private double capacidadMaxima;
 	private double cantidadActual;
+	//🔥 RETO – Taller de Mejora y Pruebas 
+	private String codigo;// Este atributo debe tener solo; Método get
 	
 	public Maquina(String nombreCerveza, String descripcion, double precioPorMl,
-			double capacidadMaxima) {
+			double capacidadMaxima, String codigo ) {
 		
 		this.nombreCerveza=nombreCerveza;
 		this.descripcion=descripcion;
@@ -16,10 +18,13 @@ public class Maquina {
 		this.capacidadMaxima=capacidadMaxima;
 		this.cantidadActual=0;
 		
+		//Incluir el atributo código en todos los constructores de la clase. 
+		this.codigo=codigo;//
+		
 		
 	}
 	
-	public Maquina(String nombreCerveza, String descripcion, double precioPorMl) {
+	public Maquina(String nombreCerveza, String descripcion, double precioPorMl, String codigo) {
 		
 		this.nombreCerveza=nombreCerveza;
 		this.descripcion=descripcion;
@@ -27,6 +32,8 @@ public class Maquina {
 		this.capacidadMaxima=10000;
 		this.cantidadActual=0;
 		
+		//Incluir el atributo código en todos los constructores de la clase. 
+		this.codigo=codigo;//	
 		
 	}
 	
@@ -58,6 +65,11 @@ public class Maquina {
 		return cantidadActual;
 	}
 	
+	// Método get del atributo codigo
+	public String getCodigo() {
+		return codigo;
+	}
+	
 	//Método
 	
 	public void imprimir() {
@@ -66,7 +78,8 @@ public class Maquina {
 						" \n descripción: "+ descripcion+
 						" \n Precio por ML: "+precioPorMl+
 						" \n Capacidad Máxima: "+capacidadMaxima+
-						" \n Cantidad Actual: "+cantidadActual;
+						" \n Cantidad Actual: "+cantidadActual+
+						" \n Código: "+codigo;
 		
 		
 		System.out.println("_________________________\n"+mensaje);
@@ -75,13 +88,15 @@ public class Maquina {
 	
 	//método llenar máquina
 	
+	
+
 	public void llenarMaquina() {
-		this.cantidadActual=this.capacidadMaxima - 100;
+		this.cantidadActual=this.capacidadMaxima - 200; //capacidad máxima menos 200 ml  
 	}
 	
 	//método recargar cerveza
 	public boolean recargarCerveza(double cantidad) {
-		double limitePermitido = capacidadMaxima - 100;
+		double limitePermitido = capacidadMaxima - 200;//capacidad máxima menos 200 ml 
 		if(cantidadActual + cantidad<=limitePermitido) {
 			
 			cantidadActual = cantidadActual + cantidad;
