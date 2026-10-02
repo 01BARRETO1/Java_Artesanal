@@ -31,6 +31,14 @@ public class NegocioMejorado {
 		return "M-"+aleatorio;
 		
 	}
-	
+	//4. Método agregarMaquina
+	public void agregarMaquina(String nombre, String descripcion, double precio) {
+		//Generar código invocando al método generarCodigo
+		String numCod=generarCodigo();
+		//Crear objeto Maquina con los valores que recibe y el resultado de generarCodigo
+		Maquina nuevaMaquina = new Maquina(nombre, descripcion, precio, numCod);
+		//Agregar el objeto creado a la lista
+		maquinas.add(nuevaMaquina);
+	}
 
 }
