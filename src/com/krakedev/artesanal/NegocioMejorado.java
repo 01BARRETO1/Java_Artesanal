@@ -23,5 +23,14 @@ public class NegocioMejorado {
 		maquinas = new ArrayList<Maquina>();
 	}
 	
+	//Método generarCodigo
+	
+	public String generarCodigo() {
+		//aleatorio de 0-100
+		int aleatorio= (int)(Math.random()*101);
+		return "M-"+aleatorio;
+		
+	}
+	
 
 }
