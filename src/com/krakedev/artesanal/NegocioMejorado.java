@@ -40,5 +40,19 @@ public class NegocioMejorado {
 		//Agregar el objeto creado a la lista
 		maquinas.add(nuevaMaquina);
 	}
+	
+	//5. Método cargarMaquinas
+	
+	public void cargarMaquinas() {
+		//Usando un for, invocar al método llenarMaquina de todas las maquinas
+		// Recorre todas las máquinas
+		for(int i = 0; i<maquinas.size(); i++) {
+			//guardo en m las Maquinas con la posición 
+			Maquina m = maquinas.get(i);
+			// Invoca el método llenarMaquina de cada objeto Maquina
+			m.llenarMaquina();	
+		}
+		
+	}
 
 }
