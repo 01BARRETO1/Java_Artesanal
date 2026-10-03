@@ -1,10 +1,14 @@
 package com.krakedev.artesanal;
 
+import java.util.ArrayList;
+
 public class Cliente {
 	private String nombre;
 	private String cedula;
 	private int codigo;
 	private double totalConsumido;
+	
+	private ArrayList<Cliente> clientes= new ArrayList<Cliente>();//🧪PARTE 2: Clientes. 8. Crear atributo ArrayList
 	
 	//constructor
 	
@@ -40,6 +44,19 @@ public class Cliente {
 		this.totalConsumido = totalConsumido;
 	}
 	
+	//9. Método registrarCliente
+	
+	public void registrarCliente(String nombre, String cedula) {
+		//Genera código con lógica de ultimoCodigo,
+		this.codigo=100;
+		//Crea una instancia de Cliente.
+		Cliente cliente = new Cliente(nombre, cedula);
+		cliente.setCodigo(codigo);
+		codigo++;
+		//Agrega el objeto creado (cliente) a la lista.
+		clientes.add(cliente);
+		
+	}
 	
 	
 }
