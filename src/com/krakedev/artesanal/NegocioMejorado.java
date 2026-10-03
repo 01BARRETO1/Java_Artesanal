@@ -32,13 +32,23 @@ public class NegocioMejorado {
 		
 	}
 	//4. Método agregarMaquina
-	public void agregarMaquina(String nombre, String descripcion, double precio) {
+	public boolean agregarMaquina(String nombre, String descripcion, double precio) {
+		//7. Validación de duplicados, 
 		//Generar código invocando al método generarCodigo
 		String numCod=generarCodigo();
-		//Crear objeto Maquina con los valores que recibe y el resultado de generarCodigo
-		Maquina nuevaMaquina = new Maquina(nombre, descripcion, precio, numCod);
-		//Agregar el objeto creado a la lista
-		maquinas.add(nuevaMaquina);
+		//7. Validación de duplicados->No permitir códigos repetidos
+		Maquina repetida = recuperarMaquina(numCod);
+		if(repetida != null) {
+			//Ya existe una máquina con ese código
+			return false;
+		}else {
+			//Crear objeto Maquina con los valores que recibe y el resultado de generarCodigo
+			Maquina nuevaMaquina = new Maquina(nombre, descripcion, precio, numCod);
+			//Agregar el objeto creado a la lista
+			maquinas.add(nuevaMaquina);
+			return true;
+		}
+			
 	}
 	
 	//5. Método cargarMaquinas
@@ -69,5 +79,7 @@ public class NegocioMejorado {
 		}
 		return null;
 	}
+	
+	
 
 }
