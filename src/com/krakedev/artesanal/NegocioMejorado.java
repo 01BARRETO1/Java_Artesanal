@@ -131,6 +131,21 @@ public class NegocioMejorado {
 			return null;
 
 		}
+		//15. Método consumirCerveza
+		public void consumirCerveza(int codigoCliente, String codigoMaquina, double cantidad) {
+		    // Buscar máquina invocando a recuperarMaquina
+		    Maquina maquinaRecuperada = recuperarMaquina(codigoMaquina);
+
+		    // Buscar cliente invocando a buscarClientePorCodigo
+		    Cliente clienteRecuperado = buscarClientePorCodigo(codigoCliente);
+
+		    // Validar que existan
+		    if (maquinaRecuperada != null && clienteRecuperado != null) {
+		        // Invocar a servirCerveza
+		        double precio = maquinaRecuperada.servirCerveza(cantidad);
+
+		    }
+		}
 
 		
 	
