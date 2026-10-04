@@ -58,5 +58,22 @@ public class Cliente {
 		
 	}
 	
+	//13. Método buscarClientePorCedula
+	
+	public Cliente  buscarClientePorCedula(String cedula) {
+		//Se usa un for en la lista
+		for(int i=0; i<clientes.size(); i++) {
+			Cliente c = clientes.get(i);//recupero cada cliente
+			//si coincide cedula
+			if(c.getCedula().equals(cedula)) {
+				//retorna el cliente
+				return c;
+			}
+			
+		}
+		//si no, retorna null
+		return null;
+	}
+	
 	
 }
