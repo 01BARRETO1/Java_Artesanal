@@ -8,7 +8,7 @@ public class NegocioMejorado {
 	
 	private ArrayList<Cliente> clientes = new ArrayList<Cliente>();// 🧪PARTE 2: Clientes. 8. Crear atributo ArrayList
 
-	
+	private int ultimoCodigo = 100;// Genera código con lógica de ultimoCodigo,
 	//
 	
 	//get and set
@@ -87,11 +87,12 @@ public class NegocioMejorado {
 
 		public void registrarCliente(String nombre, String cedula) {
 			// Genera código con lógica de ultimoCodigo,
-			int codigo = 100;
+			
 			// Crea una instancia de Cliente.
 			Cliente cliente = new Cliente(nombre, cedula);
-			cliente.setCodigo(codigo);
-			codigo++;
+			cliente.setCodigo(ultimoCodigo);
+			ultimoCodigo ++;
+			
 			// Agrega el objeto creado (cliente) a la lista.
 			clientes.add(cliente);
 
@@ -143,10 +144,22 @@ public class NegocioMejorado {
 		    if (maquinaRecuperada != null && clienteRecuperado != null) {
 		        // Invocar a servirCerveza
 		        double precio = maquinaRecuperada.servirCerveza(cantidad);
+		        
+		        //17. Integración.-
+		        registrarConsumo(clienteRecuperado, precio);
 
 		    }
 		}
-
+		
+		//16.Método registrarConsumo en NegocioMejorado
+		
+		public void registrarConsumo(Cliente clienteRecuperado, double precio) {
+			
+			double valorConsumido=clienteRecuperado.getTotalConsumido();
+			valorConsumido+=precio;
+			clienteRecuperado.setTotalConsumido(valorConsumido);
+			
+		}
 		
 	
 
