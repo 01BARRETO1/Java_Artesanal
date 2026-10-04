@@ -161,6 +161,18 @@ public class NegocioMejorado {
 			
 		}
 		
+		//19. Método consultarValorVendido
+		public double consultarValorVendido() {
+		    double totalVendido = 0.0; // acumulador
+		    
+		    for (int i = 0; i < clientes.size(); i++) {
+		        Cliente c = clientes.get(i);
+		        totalVendido += c.getTotalConsumido(); // acumula el consumo de cada cliente
+		    }
+		    
+		    return totalVendido;
+		}
+
 	
 
 }
